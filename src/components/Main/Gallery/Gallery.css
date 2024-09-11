@@ -1,0 +1,192 @@
+/* Container สำหรับ Gallery */
+.gallery-container {
+    max-width: 1680px; /* ขนาดสูงสุดของ container */
+    margin: 0 auto; /* จัดกึ่งกลาง container */
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* ปุ่มแท็ก */
+.tags {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tag-btn {
+  background-color: #352926;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag-btn.selected {
+  background-color: #ffffff;
+  color: #352926;
+  border: 1px solid #352926;
+}
+
+.tag-btn:hover {
+  background-color: #ffffff;
+  color: #352926;
+  border: 1px solid #352926;
+}
+
+/* Grid ของ Gallery */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card ของ Gallery */
+.gallery-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: calc(25% - 20px); /* ทำให้แต่ละการ์ดมีความกว้างประมาณ 1/4 ของพื้นที่ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* รูปภาพของ Gallery */
+.gallery-image {
+  width: 100%;
+  height: 200px; /* ปรับขนาดของรูปภาพให้เหมาะสม */
+  object-fit: cover; /* ทำให้รูปภาพเต็มพื้นที่โดยไม่เปลี่ยนสัดส่วน */
+}
+
+/* เนื้อหาภายในการ์ด */
+.gallery-card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 18px; /* ขนาดของฟอนต์ที่เหมาะสมสำหรับทุกขนาดหน้าจอ */
+  margin: 10px 0;
+  color: #333;
+}
+
+.gallery-detail {
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery-price-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.gallery-price {
+  font-size: 18px; /* ขนาดของฟอนต์ที่เหมาะสม */
+  color: #333;
+}
+
+.add-order-btn {
+  background-color: #ffffffd8;
+  border: none;
+  color: #352926;
+  padding: 8px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #413634;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.add-order-btn i {
+  margin-right: 8px; /* เพิ่มช่องว่างระหว่างไอคอนกับข้อความ */
+}
+
+.add-order-btn:hover {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #352926;
+}
+
+.gallery-tags {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.gallery-tag {
+  display: inline-block;
+  background-color: #352926;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+/* Media Queries สำหรับอุปกรณ์ที่มีขนาดเล็ก */
+@media (max-width: 1200px) {
+  .gallery-card {
+    width: calc(33.333% - 20px); /* แสดงการ์ด 3 คอลัมน์ */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-card {
+    width: calc(50% - 20px); /* แสดงการ์ด 2 คอลัมน์ */
+  }
+
+  .gallery-image {
+    height: 150px; /* ปรับความสูงของรูปภาพ */
+  }
+
+  .gallery-title {
+    font-size: 16px;
+  }
+
+  .gallery-price {
+    font-size: 16px;
+  }
+
+  .add-order-btn {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-card {
+    width: 100%; /* แสดงการ์ด 1 คอลัมน์ */
+  }
+
+  .gallery-image {
+    height: 120px; /* ปรับความสูงของรูปภาพ */
+  }
+
+  .gallery-title {
+    font-size: 14px;
+  }
+
+  .gallery-price {
+    font-size: 14px;
+  }
+
+  .add-order-btn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}

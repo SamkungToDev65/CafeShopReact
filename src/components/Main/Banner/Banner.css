@@ -1,0 +1,52 @@
+/* Container for the flip animation */
+.flip {
+    position: relative;
+    height: 60px; /* Adjust height to fit your text */
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Center vertically */
+    font-size: 2rem; /* Adjust font size as needed */
+}
+
+/* Individual flip items */
+.flip-item {
+    position: absolute;
+    width: 100%;
+    text-align: center; /* Center the text horizontally */
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(100%);
+    animation: slide 12s ease-in-out infinite;
+}
+
+/* Delay for the second flip item */
+.flip-item:nth-child(2) {
+    animation-delay: 6s;
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slide {
+    0%, 5% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+    38% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    66% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
